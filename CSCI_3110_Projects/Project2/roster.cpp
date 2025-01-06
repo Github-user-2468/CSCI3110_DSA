@@ -73,7 +73,7 @@ This function an overloaded << operator and is used to output the
 information in the file of ALL the students data 
 *********************************************************************/
 ostream& operator << (ostream& os, const Roster& oneClass) {
-	os << right << setw(10) << "ID" << setw(15) << "Name" << setw(8) << "CLA" << setw(8) << "OLA" << setw(8) << "Quiz" << setw(15) << "Homework"
+	os << right << setw(10) << "ID" << setw(15) << "Name" << setw(8) << "CLA" << setw(8) << "OLA" << setw(10) << "Quiz" << setw(12) << "Homework"
 		<< setw(8) << "Exam" << setw(8) << "Bonus" << endl;
 
 	os  << endl;
@@ -82,8 +82,8 @@ ostream& operator << (ostream& os, const Roster& oneClass) {
 			<< setw(8) << oneClass.students[i].getScore(Student::CLA)
 			<< setw(8) << oneClass.students[i].getScore(Student::OLA)
 			<< setw(8) << oneClass.students[i].getScore(Student::QUIZ)
-			<< setw(15) << oneClass.students[i].getScore(Student::HOMEWORK)
-			<< setw(8) << oneClass.students[i].getScore(Student::EXAM)
+			<< setw(10) << oneClass.students[i].getScore(Student::HOMEWORK)
+			<< setw(11) << oneClass.students[i].getScore(Student::EXAM)
 			<< setw(8) << oneClass.students[i].getScore(Student::BONUS) << endl;
 	}
 	return os;
